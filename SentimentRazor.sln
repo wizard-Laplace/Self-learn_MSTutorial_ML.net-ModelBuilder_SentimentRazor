@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentRazor", "SentimentRazor\SentimentRazor.csproj", "{5457A0A9-6C39-40E5-9997-DAE3D3736C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentRazor", "SentimentRazor\SentimentRazor.csproj", "{5457A0A9-6C39-40E5-9997-DAE3D3736C69}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentRazorML.Model", "SentimentRazorML.Model\SentimentRazorML.Model.csproj", "{49BBE07D-390C-4BFB-8963-6D8D2AB9D5BD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentRazorML.ConsoleApp", "SentimentRazorML.ConsoleApp\SentimentRazorML.ConsoleApp.csproj", "{D43CAAD4-A1AF-4D54-AFD4-904F0736B8AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{5457A0A9-6C39-40E5-9997-DAE3D3736C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5457A0A9-6C39-40E5-9997-DAE3D3736C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5457A0A9-6C39-40E5-9997-DAE3D3736C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49BBE07D-390C-4BFB-8963-6D8D2AB9D5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49BBE07D-390C-4BFB-8963-6D8D2AB9D5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49BBE07D-390C-4BFB-8963-6D8D2AB9D5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49BBE07D-390C-4BFB-8963-6D8D2AB9D5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D43CAAD4-A1AF-4D54-AFD4-904F0736B8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D43CAAD4-A1AF-4D54-AFD4-904F0736B8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D43CAAD4-A1AF-4D54-AFD4-904F0736B8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D43CAAD4-A1AF-4D54-AFD4-904F0736B8AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

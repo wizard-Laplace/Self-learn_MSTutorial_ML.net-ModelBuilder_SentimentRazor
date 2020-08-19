@@ -8,11 +8,17 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.IO;
+using Microsoft.Extensions.ML;
+using SentimentRazorML.Model;
 
 namespace SentimentRazor
 {
     public class Startup
     {
+        // トレーニング済みのモデルファイルの場所を格納するグローバル変数を定義
+        private readonly string _modelPath;
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
