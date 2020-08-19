@@ -10,6 +10,7 @@ function getSentiment(userInput) {
         .then((response) => {
             return response.text();
         })
+}
 
 // センチメントが予測されると、Webページ上のマーカーの位置を動的に更新
 function updateMarker(markerPosition, sentiment) {
@@ -20,6 +21,7 @@ function updateMarker(markerPosition, sentiment) {
 // ユーザーから入力を取得し、getSentiment 関数を使用してそれを OnGetAnalyzeSentiment 関数に送信し、
 // updateMarker 関数でマーカーを更新
 function updateSentiment() {
+
     var userInput = $("#Message").val();
 
     getSentiment(userInput)
