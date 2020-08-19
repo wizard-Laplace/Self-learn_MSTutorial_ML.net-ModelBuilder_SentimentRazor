@@ -16,10 +16,10 @@ namespace SentimentRazor.Pages
         // IndexModel クラス内で PredictionEnginePool を参照する変数を追加
         private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+        //public IndexModel(ILogger<IndexModel> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         /// <summary>
         /// IndexModel クラスでコンストラクターを作成し、PredictionEnginePool サービスを挿入
