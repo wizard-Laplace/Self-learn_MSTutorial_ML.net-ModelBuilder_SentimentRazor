@@ -19,9 +19,15 @@ namespace SentimentRazor
         // トレーニング済みのモデルファイルの場所を格納するグローバル変数を定義
         private readonly string _modelPath;
 
+        /// <summary>
+        /// GetAbsolutePathメソッドを使用して、グローバル変数_modelPathに値を代入する
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+
+            _modelPath = GetAbsolutePath("MLModel.zip");
         }
 
         public IConfiguration Configuration { get; }
@@ -30,6 +36,9 @@ namespace SentimentRazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.AddPredictionEnginePool<ModelInput, ModelOutput>()
+                .FromFile(_modelPath);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +66,21 @@ namespace SentimentRazor
             {
                 endpoints.MapRazorPages();
             });
+        }
+
+        /// <summary>
+        /// モデルファイルはアプリケーションのアセンブリファイルと共にビルドディレクトリに格納される為、
+        /// アクセスしやすいようにヘルパーメソッドを実装する。
+        /// </summary>
+        /// <param name="relativePath"></param>
+        /// <returns>fullPath</returns>
+        public static string GetAbsolutePath(string relativePath)
+        {
+            FileInfo _dataRoot = new FileInfo(typeof(Program).Assembly.Location);
+            string assemblyFolderPath = _dataRoot.Directory.FullName;
+
+            string fullPath = Path.Combine(assemblyFolderPath, relativePath);
+            return fullPath;
         }
     }
 }
