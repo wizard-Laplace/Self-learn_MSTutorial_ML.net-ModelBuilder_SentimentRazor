@@ -6,11 +6,10 @@
 
 // OnGetAnalyzeSentiment ハンドラーへのユーザー入力を使用して GET HTTP要求を作成
 function getSentiment(userInput) {
-    return fetch(`Index?handler=AnalyzezSentiment&text=${userInput}`)
+    return fetch(`Index?handler=AnalyzeSentiment&text=${userInput}`)
         .then((response) => {
             return response.text();
         })
-}
 
 // センチメントが予測されると、Webページ上のマーカーの位置を動的に更新
 function updateMarker(markerPosition, sentiment) {
@@ -24,7 +23,7 @@ function updateSentiment() {
     var userInput = $("#Message").val();
 
     getSentiment(userInput)
-        .then((entiment) => {
+        .then((sentiment) => {
             switch (sentiment) {
                 case "Not Toxic":
                     updateMarker(100.0, sentiment);
